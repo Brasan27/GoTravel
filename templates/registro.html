@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+{% block title %}Registro{% endblock %}
+{% block content %}
+
+<div class="registro-wrapper">
+  <div class="registro-container">
+    <a href="/login" class="back-button">←</a>
+
+    <h1>Crear cuenta</h1>
+    <p class="subtitle">Por favor complete los datos y cree una cuenta</p>
+
+    <form>
+      <label for="nombre">Nombre</label>
+      <input type="text" id="nombre" placeholder="">
+
+      <label for="correo">Correo</label>
+      <input type="email" id="correo" placeholder="">
+
+      <label for="password">Contraseña</label>
+      <input type="password" id="password" placeholder="" type="password">
+      
+      <small>La contraseña debe tener 8 caracteres</small>
+
+      <button type="submit" class="boton-principal">Crear cuenta</button>
+    </form>
+
+    <p class="cuenta-existente">
+      Ya tengo una cuenta <a href="/login">Iniciar Sesión</a>
+    </p>
+
+    <p class="divider">O puedes iniciar sesión con</p>
+    <div class="social-icons">
+      <img src="https://img.icons8.com/color/48/000000/chrome--v1.png"/>
+      <img src="https://img.icons8.com/fluency/48/facebook-new.png"/>
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apple/apple-original.svg" alt="Apple">
+    </div>
+  </div>
+</div>
+{% endblock %}

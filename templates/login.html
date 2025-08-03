@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+{% block title %}Login{% endblock %}
+{% block content %}
+
+<div class="login-wrapper">
+  <div class="login-container">
+    <h1>Iniciar Sesión</h1>
+    <p class="subtitle">Inicie sesión para continuar con nuestra aplicación</p>
+
+    <input type="email" placeholder="Correo">
+    <input type="password" placeholder="Contraseña">
+    <a href="#" class="forgot">¿Olvidaste tu contraseña?</a>
+
+    <button class="btn-login">Iniciar Sesión</button>
+
+    <p class="signup-text">
+      ¿No tienes una cuenta? <a href="/registro">Crear una cuenta</a>
+    </p>
+
+    <p class="or-text">O puedes iniciar sesión con</p>
+
+    <div class="social-icons">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg" alt="Google">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/facebook/facebook-original.svg" alt="Facebook">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apple/apple-original.svg" alt="Apple">
+    </div>
+  </div>
+</div>
+{% endblock %}

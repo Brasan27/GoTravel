@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{% block title %}Go Travel{% endblock %}</title>
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
+  <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css"/>
+  <link rel="stylesheet" href="/static/styles.css">
+    <!-- Mapbox -->
+  <script src='https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js'></script>
+  <link href='https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css' rel='stylesheet' />
+
+  
+  <style>
+     #map {
+      width: 100%;
+      height: 400px;
+      margin-top: 20px;
+    }
+
+    ion-toolbar {
+      --background: rgb(48, 190, 190);
+      --color: white;
+    }
+    ion-content {
+      --background: #f4f4f4;
+    }
+    ion-button {
+      --color: white;
+    }
+  </style>
+</head>
+<body>
+  <ion-app>
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Go Travel</ion-title>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-content>
+      <div style="padding: 1rem;">
+        {% block content %}
+            <ion-item href="/home">Inicio</ion-item>
+            <ion-item href="/gps">Ubicación GPS</ion-item>
+            <ion-item href="/login">login</ion-item>
+            <ion-item href="/registro">registro</ion-item>     
+        {% endblock %}
+      </div>
+    </ion-content>
+
+    <!-- Menú inferior fijo -->
+    <ion-footer>
+      <ion-toolbar>
+        <ion-grid>
+          <ion-row>
+            <ion-col>
+              <ion-button expand="full" fill="clear" href="/index">
+                <ion-icon name="home" slot="icon-only"></ion-icon>
+              </ion-button>
+            </ion-col>
+            <ion-col>
+              <ion-button expand="full" fill="clear" href="/gps">
+                <ion-icon name="location-outline" slot="icon-only"></ion-icon>
+              </ion-button>
+            </ion-col>
+            <ion-col>
+              <ion-button expand="full" fill="clear" href="lugares">
+                <ion-icon name="search" slot="icon-only"></ion-icon>
+              </ion-button>
+            </ion-col>
+            <ion-col>
+              <ion-button expand="full" fill="clear" href="#">
+                <ion-icon name="logo-reddit" slot="icon-only"></ion-icon>
+              </ion-button>
+            </ion-col>
+            <ion-col>
+              <ion-button expand="full" fill="clear" href="/login">
+                <ion-icon name="person-outline" slot="icon-only"></ion-icon>
+              </ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-toolbar>
+    </ion-footer>
+  </ion-app>
+</body>
+</html>

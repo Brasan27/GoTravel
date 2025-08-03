@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+{% block content %}
+<h2>Cámara</h2>
+<ion-button onclick="activarCamara()">Activar cámara</ion-button>
+<br><br>
+<video id="video" width="300" autoplay></video>
+<canvas id="foto" width="300" height="225" style="display:none;"></canvas>
+<ion-button onclick="tomarFoto()">Tomar Foto</ion-button>
+
+<script>
+  let stream;
+
+  async function activarCamara() {
+    try {
+      stream = await navigator.mediaDevices.getUserMedia({ video: true });
+      document.getElementById('video').srcObject = stream;
+    } catch (err) {
+      alert("Error al acceder a la cámara: " + err.message);
+    }
+  }
+
+  function tomarFoto() {
+    const video = document.getElementById('video');
+    const canvas = document.getElementById('foto');
+    const context = canvas.getContext('2d');
+    context.drawImage(video, 0, 0, canvas.width, canvas.height);
+    canvas.style.display = 'block';
+  }
+</script>
+{% endblock %}

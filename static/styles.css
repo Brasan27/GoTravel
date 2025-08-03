@@ -1,0 +1,297 @@
+
+  /* This style is for demonstration purposes only. */
+  /* It's not required for the tabs to function. */
+  .example-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+
+  .fondo{
+    background-color: rgb(48, 190, 190);
+  }
+
+  .icono{
+    color: aliceblue;
+  }
+
+  ion-tab-button.fondo{
+    color:white;
+  }
+
+
+
+
+
+
+  .hero {
+    background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb');
+    background-size: cover;
+    background-position: center;
+    height: 70vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .overlay {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 2rem;
+    text-align: center;
+    color: white;
+    border-radius: 20px;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1.2rem;
+  }
+
+  .hero-title span {
+    color: #30bebe;
+    display: block;
+    font-weight: normal;
+  }
+
+  .carousel-section {
+    padding: 1.5rem;
+  }
+
+  .carousel-section h2 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+
+  .destination-card {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+
+  .destination-card img {
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+  }
+
+  .destination-info {
+    background: white;
+    padding: 0.8rem;
+  }
+
+  .destination-info h3 {
+    margin: 0;
+    font-size: 1rem;
+    color: #222;
+  }
+
+  .destination-info p {
+    margin: 0.3rem 0 0;
+    font-size: 0.85rem;
+    color: #666;
+  }
+
+
+
+     #map {
+      width: 100%;
+      height: 400px;
+      margin-top: 20px;
+    }
+
+    ion-toolbar {
+      --background: rgb(48, 190, 190);
+      --color: white;
+    }
+    ion-content {
+      --background: #f4f4f4;
+    }
+    ion-button {
+      --color: white;
+    }
+  
+
+
+  .login-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #f7fcfd;
+  }
+
+  .login-container {
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+  }
+
+  h2 {
+    margin-bottom: 10px;
+  }
+
+  p.subtitle {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 25px;
+  }
+
+  input[type="email"], input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+  }
+
+  .forgot {
+    display: block;
+    text-align: right;
+    font-size: 13px;
+    margin-bottom: 20px;
+    color: #4c8ef7;
+    text-decoration: none;
+  }
+
+  .btn-login {
+    width: 100%;
+    padding: 12px;
+    background-color: #4c8ef7;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  .signup-text {
+    margin-top: 20px;
+    font-size: 14px;
+  }
+
+  .signup-text a {
+    color: #4c8ef7;
+    text-decoration: none;
+  }
+
+  .or-text {
+    color: #999;
+    margin-top: 20px;
+  }
+
+  .social-icons {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .social-icons img {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+  }
+
+
+
+  .registro-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 120px);
+  }
+
+  .registro-container {
+    background-color: white;
+    padding: 30px;
+    width: 100%;
+    max-width: 350px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    text-align: center;
+    position: relative;
+  }
+
+  .back-button {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    text-decoration: none;
+    font-size: 18px;
+    color: black;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  label {
+    text-align: left;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+
+  input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 7px;
+    font-size: 14px;
+  }
+
+
+
+  small {
+    text-align: left;
+    font-size: 12px;
+    color: #777;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    display: block;
+  }
+
+  .boton-principal {
+    background-color: #00bcd4;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 15px;
+  }
+
+  .cuenta-existente {
+    margin-top: 15px;
+    font-size: 14px;
+  }
+
+  .cuenta-existente a {
+    color: #00bcd4;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  .divider {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 13px;
+    color: #555;
+  }
+
+  .social-icons img {
+    width: 40px;
+    margin: 0 8px;
+    vertical-align: middle;
+  }

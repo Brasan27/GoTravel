@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+{% block content %}
+  <div style="display: flex; justify-content: center; margin-top: 16px;">
+    <ion-button onclick="obtenerUbicacion()">Obtener ubicación Actual</ion-button>
+  </div>
+  <div id="map" style="width: 100%; height: 680px; margin-top: 20px;"></div><div id="map"></div>
+
+<script>
+  mapboxgl.accessToken = 'pk.eyJ1IjoicGlwZTk0MjciLCJhIjoiY21kdXRxdHh5MDlzcTJtcHo0NGR4aHloNSJ9.6Rsx3PQNg4Pbk2V6vYQ6CA';
+
+  function obtenerUbicacion() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(mostrarMapa, error => {
+        alert("Error obteniendo ubicación: " + error.message);
+      });
+    } else {
+      alert("Geolocalización no soportada.");
+    }
+  }
+
+  function mostrarMapa(posicion) {
+    const lat = posicion.coords.latitude;
+    const lon = posicion.coords.longitude;
+
+    const map = new mapboxgl.Map({
+      container: 'map',
+      style: 'mapbox://styles/mapbox/streets-v12',
+      center: [lon, lat],
+      zoom: 14
+    });
+
+    new mapboxgl.Marker()
+      .setLngLat([lon, lat])
+      .setPopup(new mapboxgl.Popup().setText("¡Estás aquí!"))
+      .addTo(map);
+  }
+</script>
+{% endblock %}

@@ -1,0 +1,75 @@
+{% extends "layout.html" %}
+
+{% block title %}Inicio{% endblock %}
+
+{% block content %}
+<ion-content fullscreen>
+  <!-- Sección HERO -->
+  <div class="hero">
+    <div class="overlay">
+      <h1 class="hero-title">Tu próxima aventura<br><span>te está esperando</span></h1>
+      <ion-button expand="block" shape="round" size="large" href="/gps">
+        Comenzar
+        <ion-icon name="paper-plane" slot="end"></ion-icon>
+      </ion-button>
+    </div>
+  </div>
+
+  <!-- Sección de destinos -->
+  <div class="carousel-section">
+    <h2>Destinos nacionales para descubrir</h2>
+    <ion-slides pager="true" options='{"slidesPerView": 1.1, "spaceBetween": 10}'>
+      <ion-slide>
+        <div class="destination-card">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/7/76/Cabo_San_Juan%2C_Colombia.jpg" />
+          <div class="destination-info">
+            <h3>Parque Tayrona</h3>
+            <p>Santa Marta • Playas vírgenes y selva tropical</p>
+          </div>
+        </div>
+      </ion-slide>
+
+      <ion-slide>
+        <div class="destination-card">
+          <img src="https://caminantesyaventureros.com/wp-content/uploads/2025/05/32.jpg.webp" />
+          <div class="destination-info">
+            <h3>Caño Cristales</h3>
+            <p>Meta • El río de los cinco colores</p>
+          </div>
+        </div>
+      </ion-slide>
+
+      <ion-slide>
+        <div class="destination-card">
+          <img src="https://timetravel.com.co/wp-content/uploads/2022/09/isla-san-andres-05112020.jpg" />
+          <div class="destination-info">
+            <h3>San Andrés</h3>
+            <p>Archipiélago • Mar de siete colores</p>
+          </div>
+        </div>
+      </ion-slide>
+
+      <ion-slide>
+        <div class="destination-card">
+          <img src="https://as2.ftcdn.net/v2/jpg/04/63/95/25/1000_F_463952592_6GMPQHx7Vsrd4UjIx8MnnWXeMcKFStKV.jpg" />
+          <div class="destination-info">
+            <h3>Guatapé</h3>
+            <p>Antioquia • Piedra del Peñol y coloridas calles</p>
+          </div>
+        </div>
+      </ion-slide>
+
+      <ion-slide>
+        <div class="destination-card">
+          <img src="https://aventurecolombia.com/wp-content/uploads/2021/03/Desert-de-Tatacoa-%C2%A9-tristan-quevilly.jpg" />
+          <div class="destination-info">
+            <h3>Desierto de la Tatacoa</h3>
+            <p>Huila • Observación de estrellas y paisajes rojos</p>
+          </div>
+        </div>
+      </ion-slide>
+    </ion-slides>
+  </div>
+</ion-content>
+
+{% endblock %}

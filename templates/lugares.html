@@ -1,0 +1,71 @@
+{% extends "layout.html" %}
+{% block title %}Inicio{% endblock %}
+{% block content %}
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>¡Explora Lugares Cercanos!</ion-card-title>
+      <ion-card-subtitle>Destinos populares cerca de ti</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <p>Descubre atracciones turísticas, parques, monumentos y más a tu alrededor.</p>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Mapa para mostrar ubicación -->
+  <div id="map"></div>
+
+  <!-- Lista de lugares cercanos -->
+  <ion-list>
+    <ion-item>
+      <ion-thumbnail slot="start">
+        <img alt="Lugar 1" src="https://monserrate.co/uploads/site/home/gallery/landscape/photo-19-2x.jpg" />
+      </ion-thumbnail>
+      <ion-label>
+        <h2>Cerro de Monserrate</h2>
+        <p>Bogotá, Colombia • ⭐ 4.8 • 2 km</p>
+      </ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-thumbnail slot="start">
+        <img alt="Lugar 2" src="https://catedral.arquibogota.org.co/sites/default/files/2023-03/CATEDRAL.png" />
+      </ion-thumbnail>
+      <ion-label>
+        <h2>Catedral primada de Colombia</h2>
+        <p>Centro, tu ciudad • ⭐ 4.5 • 1 km</p>
+      </ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-thumbnail slot="start">
+        <img alt="Lugar 3" src="https://files.visitbogota.co/drpl/sites/default/files/2021-04/nacional-4.png" />
+      </ion-thumbnail>
+      <ion-label>
+        <h2>Parque Nacional</h2>
+        <p>Zona verde, tu ciudad • ⭐ 4.6 • 500 m</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <script>
+    mapboxgl.accessToken = 'pk.eyJ1IjoicGlwZTk0MjciLCJhIjoiY21kdXRxdHh5MDlzcTJtcHo0NGR4aHloNSJ9.6Rsx3PQNg4Pbk2V6vYQ6CA'; // Reemplaza con tu token de Mapbox
+
+    const map = new mapboxgl.Map({
+      container: 'map',
+      style: 'mapbox://styles/mapbox/streets-v12',
+      center: [-74.0721, 4.7110], // Bogotá de ejemplo
+      zoom: 12
+    });
+
+    const places = [
+      { name: "Cerro de Monserrate", coords: [-74.0552, 4.6051] },
+      { name: "Catedral primada de colombia", coords: [-74.0785, 4.6097] },
+      { name: "Parque Nacional", coords: [-74.06313673040789, 4.623504341408175, ]},
+    ];
+
+    places.forEach(place => {
+      new mapboxgl.Marker()
+        .setLngLat(place.coords)
+        .setPopup(new mapboxgl.Popup().setText(place.name))
+        .addTo(map);
+    });
+  </script>
+{% endblock %}
