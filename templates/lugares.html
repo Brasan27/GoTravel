@@ -11,6 +11,8 @@
     </ion-card-content>
   </ion-card>
 
+
+
   <!-- Mapa para mostrar ubicación -->
   <div id="map"></div>
 
@@ -46,26 +48,47 @@
   </ion-list>
 
   <script>
-    mapboxgl.accessToken = 'pk.eyJ1IjoicGlwZTk0MjciLCJhIjoiY21kdXRxdHh5MDlzcTJtcHo0NGR4aHloNSJ9.6Rsx3PQNg4Pbk2V6vYQ6CA'; // Reemplaza con tu token de Mapbox
+  mapboxgl.accessToken = 'pk.eyJ1IjoicGlwZTk0MjciLCJhIjoiY21kdXRxdHh5MDlzcTJtcHo0NGR4aHloNSJ9.6Rsx3PQNg4Pbk2V6vYQ6CA';
 
-    const map = new mapboxgl.Map({
-      container: 'map',
-      style: 'mapbox://styles/mapbox/streets-v12',
-      center: [-74.0721, 4.7110], // Bogotá de ejemplo
-      zoom: 12
-    });
+  const map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/streets-v12',
+    center: [-74.0721, 4.7110], // Centro temporal
+    zoom: 13
+  });
 
-    const places = [
-      { name: "Cerro de Monserrate", coords: [-74.0552, 4.6051] },
-      { name: "Catedral primada de colombia", coords: [-74.0785, 4.6097] },
-      { name: "Parque Nacional", coords: [-74.06313673040789, 4.623504341408175, ]},
-    ];
+  // Mostrar ubicación real del usuario
+  navigator.geolocation.getCurrentPosition(
+    function(position) {
+      const userCoords = [position.coords.longitude, position.coords.latitude];
+      map.setCenter(userCoords);
 
-    places.forEach(place => {
-      new mapboxgl.Marker()
-        .setLngLat(place.coords)
-        .setPopup(new mapboxgl.Popup().setText(place.name))
+      new mapboxgl.Marker({ color: 'blue' })
+        .setLngLat(userCoords)
+        .setPopup(new mapboxgl.Popup().setText('Estás aquí'))
         .addTo(map);
-    });
-  </script>
+    },
+    function(error) {
+      console.error("No se pudo obtener la ubicación:", error.message);
+    },
+    {
+      enableHighAccuracy: true
+    }
+  );
+
+  // Lugares turísticos
+  const places = [
+    { name: "Cerro de Monserrate", coords: [-74.0552, 4.6051] },
+    { name: "Catedral primada de Colombia", coords: [-74.0785, 4.6097] },
+    { name: "Parque Nacional", coords: [-74.0631, 4.6235] },
+  ];
+
+  places.forEach(place => {
+    new mapboxgl.Marker({ color: 'red' })
+      .setLngLat(place.coords)
+      .setPopup(new mapboxgl.Popup().setText(place.name))
+      .addTo(map);
+  });
+</script>
+
 {% endblock %}

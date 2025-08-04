@@ -295,3 +295,20 @@
     margin: 0 8px;
     vertical-align: middle;
   }
+
+     #map {
+      width: 100%;
+      height: 400px;
+      margin-top: 20px;
+    }
+
+    ion-toolbar {
+      --background: rgb(48, 190, 190);
+      --color: white;
+    }
+    ion-content {
+      --background: #f4f4f4;
+    }
+    ion-button {
+      --color: white;
+    }

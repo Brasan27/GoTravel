@@ -1,5 +1,16 @@
 {% extends "layout.html" %}
 {% block content %}
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>¿Quieres conocer tu ubicación actual?</ion-card-title>
+      <ion-card-subtitle>¡Importante! Concede los permisos de ubicación de tu dispositivo, para acceder a tu ubicación.</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <p>Dale click en el botón "OBTENER UBICACIÓN ACTUAL"</p>
+    </ion-card-content>
+  </ion-card>
+
+
   <div style="display: flex; justify-content: center; margin-top: 16px;">
     <ion-button onclick="obtenerUbicacion()">Obtener ubicación Actual</ion-button>
   </div>
